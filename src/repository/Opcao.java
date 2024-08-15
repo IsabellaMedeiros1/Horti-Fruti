@@ -1,8 +1,9 @@
-package models;
+package repository;
+
 import models.Produto;
 import java.util.List;
 
-public interface Cadastro {
+public interface Opcao {
     void cadastrar(Produto produto);
     List<Produto> listar();
     Produto consultarPorCodigo(int codigo);
@@ -10,3 +11,4 @@ public interface Cadastro {
     void alterar(Produto produto);
     void excluir(int codigo);
 }
+

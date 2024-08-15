@@ -20,18 +20,22 @@ public class Menu implements Opcao {
 
     @Override
     public Produto codigoConsulta(int codigo) {
-        return produtos.stream()
-                .filter(produto -> produto.getCodigo() == codigo)
-                .findFirst()
-                .orElse(null);
+        for (Produto produto : produtos) {
+            if (produto.getCodigo() == codigo) {
+                return produto;
+            }
+        }
+        return null;
     }
 
     @Override
     public Produto nomeConsulta(String nome) {
-        return produtos.stream()
-                .filter(produto -> produto.getNome().equalsIgnoreCase(nome))
-                .findFirst()
-                .orElse(null);
+        for (Produto produto : produtos) {
+            if (produto.getNome().equalsIgnoreCase(nome)) {
+                return produto;
+            }
+        }
+        return null;
     }
 
     @Override

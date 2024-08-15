@@ -83,6 +83,19 @@ public class Main {
                         }
                     }
                     break;
+
+                case 2:
+                    System.out.println("Digite o código do produto que deseja consultar: ");
+                    int codigoConsulta = leitor.nextInt();
+                    Produto produtoCodConsulta = opcao.consultarPorCodigo(codigoConsulta);
+                    if (produtoCodConsulta != null) {
+                        System.out.println("Produto encontrado: " + produtoCodConsulta);
+                    } else {
+                        System.out.println("Produto com o código " + codigoConsulta + " não encontrado.");
+                    }
+                    break;
+
+                case 3:
             }
         } while (op != 6);
         System.out.println("Programa encerrado");

@@ -51,7 +51,7 @@ public class Produto {
     @Override
     public String toString() {
         return  nome.toUpperCase()+
-                "codigo:" + codigo +
+                "\ncodigo:" + codigo +
                 "\nPreço:" + preco +
                 "\nCategoria:" + categoria + "\n";
     }

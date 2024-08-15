@@ -19,7 +19,7 @@ public class Menu implements Opcao {
     }
 
     @Override
-    public Produto consultarPorCodigo(int codigo) {
+    public Produto codigoConsulta(int codigo) {
         return produtos.stream()
                 .filter(produto -> produto.getCodigo() == codigo)
                 .findFirst()
@@ -27,7 +27,7 @@ public class Menu implements Opcao {
     }
 
     @Override
-    public Produto consultarPorNome(String nome) {
+    public Produto nomeConsulta(String nome) {
         return produtos.stream()
                 .filter(produto -> produto.getNome().equalsIgnoreCase(nome))
                 .findFirst()
@@ -36,7 +36,7 @@ public class Menu implements Opcao {
 
     @Override
     public void alterar(Produto produto) {
-        Produto existente = consultarPorCodigo(produto.getCodigo());
+        Produto existente = codigoConsulta(produto.getCodigo());
         if (existente != null) {
             existente.setNome(produto.getNome());
             existente.setPreco(produto.getPreco());

@@ -5,13 +5,13 @@ import enums.Categoria;
 public class Produto {
     private int codigo;
     private String nome;
-    private double precoPorKg;
+    private double preco;
     private Categoria categoria;
 
-    public Produto(int codigo, String nome, double precoPorKg, Categoria categoria) {
+    public Produto(int codigo, String nome, double preco, Categoria categoria) {
         this.codigo = codigo;
         this.nome = nome;
-        this.precoPorKg = precoPorKg;
+        this.preco = preco;
         this.categoria = categoria;
     }
 
@@ -32,12 +32,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double getPrecoPorKg() {
-        return precoPorKg;
+    public double getPreco() {
+        return preco;
     }
 
-    public void setPrecoPorKg(double precoPorKg) {
-        this.precoPorKg = precoPorKg;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public Categoria getCategoria() {
@@ -50,11 +50,9 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "ItemHortiFruti{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", precoPorKg=" + precoPorKg +
-                ", categoria=" + categoria +
-                '}';
+        return  nome.toUpperCase()+
+                "\ncodigo:" + codigo +
+                "\nPreço:" + preco +
+                "\nCategoria:" + categoria + "\n";
     }
 }

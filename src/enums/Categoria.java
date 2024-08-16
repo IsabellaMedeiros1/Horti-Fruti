@@ -3,5 +3,7 @@ package enums;
 public enum Categoria {
     FRUTA,
     VERDURA,
-    LEGUMES
+    LEGUMES,
+    OVO,
+    TEMPERO
 }

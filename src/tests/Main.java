@@ -115,10 +115,23 @@ public class Main {
                     break;
 
                 case 4:
+                    List<Produto> produtosCadastrados = opcao.listar();
+
+                    if (produtosCadastrados.isEmpty()) {
+                        System.out.println("Nenhum produto cadastrado.");
+                        break;
+                    }
+
+                    System.out.println("Escolha o código do produto que deseja alterar:");
+                    for (Produto p : produtosCadastrados) {
+                        System.out.println("Código: " + p.getCodigo() + " - Nome: " + p.getNome());
+                    }
+
                     System.out.println("Digite o código do produto que deseja alterar: ");
                     int codigoAlterar = leitor.nextInt();
                     leitor.nextLine();
                     Produto produtoAlterar = opcao.codigoConsulta(codigoAlterar);
+
                     if (produtoAlterar != null) {
                         System.out.println("Digite o novo nome do Produto: ");
                         String novoNome = leitor.nextLine();
@@ -134,19 +147,19 @@ public class Main {
                         String novaCategoriaEscolhida = leitor.nextLine().toUpperCase();
                         Categoria novaCategoria = null;
                         switch (novaCategoriaEscolhida) {
-                            case "A":
-                                novaCategoria = Categoria.FRUTA;
-                                break;
-                            case "B":
+                            case "F":
+                                          novaCategoria = Categoria.FRUTA;
+                      break;
+                            case "L":
                                 novaCategoria = Categoria.LEGUMES;
                                 break;
-                            case "C":
+                            case "V":
                                 novaCategoria = Categoria.VERDURA;
                                 break;
-                            case "D":
+                            case "O":
                                 novaCategoria = Categoria.OVO;
                                 break;
-                            case "E":
+                            case "T":
                                 novaCategoria = Categoria.TEMPERO;
                                 break;
                             default:
@@ -163,17 +176,6 @@ public class Main {
                     }
                     break;
 
-                case 5:
-                    System.out.println("Digite o código do produto que deseja excluir: ");
-                    int codigoExcluir = leitor.nextInt();
-                    Produto produtoExcluir = opcao.codigoConsulta(codigoExcluir);
-                    if (produtoExcluir != null) {
-                        opcao.excluir(codigoExcluir);
-                        System.out.println("Produto excluído com sucesso!");
-                    } else {
-                        System.out.println("Produto com o código " + codigoExcluir + " não encontrado.");
-                    }
-                    break;
             }
         } while (op != 6);
         System.out.println("Programa encerrado");

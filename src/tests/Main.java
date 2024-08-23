@@ -175,6 +175,17 @@ public class Main {
                         System.out.println("Produto com o código " + codigoAlterar + " não encontrado.");
                     }
                     break;
+                case 5:
+                    System.out.println("Digite o código do produto que deseja excluir: ");
+                    int codigoExcluir = leitor.nextInt();
+                    Produto produtoExcluir = opcao.codigoConsulta(codigoExcluir);
+                    if (produtoExcluir != null) {
+                        opcao.excluir(codigoExcluir);
+                        System.out.println("Produto excluído com sucesso!");
+                    } else {
+                        System.out.println("Produto com o código " + codigoExcluir + " não encontrado.");
+                    }
+                    break;
 
             }
         } while (op != 6);
